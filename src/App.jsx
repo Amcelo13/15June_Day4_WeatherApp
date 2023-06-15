@@ -40,19 +40,19 @@ function App() {
       setweather_nature(response.weather[0].main);
       const d = new Date();
       let hour = d.getHours();
-      if (response.weather[0].main === "Clouds" && hour <= 20) {
+     if (response.weather[0].main === "Clouds") {
         setIco(Clouds);
         setbf(Cloudy);
       }
-      if (response.weather[0].main === "Rain" && hour <= 20) {
+      if (response.weather[0].main === "Rain") {
         setIco(Rain);
         setbf(Rainy);
       }
-      if (response.weather[0].main === "Clear" && hour <= 20) {
+      if (response.weather[0].main === "Clear") {
         setIco(Sun);
         setbf(Sunny);
       }
-      if (response.weather[0].main === "Dust" && hour <= 20) {
+      if (response.weather[0].main === "Dust") {
         setIco(Dust);
         setbf(Dusty);
       }
@@ -60,6 +60,14 @@ function App() {
       if (response.weather[0].main === "Clear" && hour >= 20) {
         setIco(Moon);
         setbf(Night);
+      }
+      if (response.weather[0].main === "Clouds" && hour >= 20) {
+        setIco(Moon);
+        setbf(Cloudy);
+      }
+      if (response.weather[0].main === "Rain" && hour >= 20) {
+        setIco(Moon);
+        setbf(Rainy);
       }
     };
     getData();
